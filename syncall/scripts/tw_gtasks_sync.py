@@ -13,9 +13,12 @@ from syncall.app_utils import confirm_before_proceeding, inform_about_app_extras
 
 try:
     from syncall.google.gtasks_side import GTasksSide
+except ImportError:
+    inform_about_app_extras(["google"])
+try:
     from syncall.taskwarrior.taskwarrior_side import TaskWarriorSide
 except ImportError:
-    inform_about_app_extras(["google", "tw"])
+    inform_about_app_extras(["tw"])
 
 from syncall.aggregator import Aggregator
 from syncall.app_utils import (
