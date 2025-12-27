@@ -18,7 +18,7 @@ except ImportError:
 try:
     from syncall.taskwarrior.taskwarrior_side import TaskWarriorSide
 except ImportError as err:
-    logger.error(err.message)
+    logger.error(err)
     inform_about_app_extras(["tw"])
 
 from syncall.aggregator import Aggregator
