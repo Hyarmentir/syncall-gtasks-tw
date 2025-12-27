@@ -17,7 +17,8 @@ except ImportError:
     inform_about_app_extras(["google"])
 try:
     from syncall.taskwarrior.taskwarrior_side import TaskWarriorSide
-except ImportError:
+except ImportError as err:
+    logger.error(err.message)
     inform_about_app_extras(["tw"])
 
 from syncall.aggregator import Aggregator
